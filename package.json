@@ -1,0 +1,34 @@
+{
+  "name": "gemini-app",
+  "version": "1.0.1",
+  "description": "A simple desktop app for Google Gemini.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:mac": "electron-builder --mac"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.example.gemini-app",
+    "productName": "Gemini",
+    "mac": {
+      "target": {
+        "target": "dmg",
+        "arch": "universal"
+      },
+      "icon": "assets/icon.png",
+      "hardenedRuntime": true,
+      "entitlements": "entitlements.mac.plist",
+      "entitlementsInherit": "entitlements.mac.plist",
+      "extendInfo": {
+        "NSFaceIDUsageDescription": "This app requires access to Touch ID to authenticate your sign-in with a passkey."
+      }
+    }
+  }
+}
